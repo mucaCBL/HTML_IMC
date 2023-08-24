@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style type="text/css">
+        .vermelho{
+            color:red
+        }
+        .verde{
+            color:green
+        }
+        .azul{
+            color:blue
+        }
+        .amarelo{
+            color:yellow
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div class="row">
+    <div class="col-sm-12 text-center">
+        <h1 class="pisca-pisca">Contador</h1>
+        <h1 class="pisca-pisca" id="contador">0</h1>
+        <button class="btn btn-dark " onclick="alert('Presta atençâo!')"> Mostra msg</button>
+        <button class="btn btn-dark " onclick="mudarCor()"> Muda cor</button>
+        <button class="btn btn-dark " onclick="contar()"> Conta</button>
+    </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+        function mudarCor(){
+          if($(".pisca-pisca").hasClass("vermelho")){
+            $(".pisca-pisca").addClass("verde");
+            $(".pisca-pisca").removeClass("vermelho");
+            $(".btn").addClass("btn-success");
+            $(".btn").removeClass("btn-danger");
+          } else if($(".pisca-pisca").hasClass("verde")){
+            $(".pisca-pisca").addClass("azul");
+            $(".pisca-pisca").removeClass("verde");
+            $(".btn").addClass("btn-primary");
+            $(".btn").removeClass("btn-success");
+          }
+          else{
+            $(".pisca-pisca").addClass("vermelho");
+            $(".pisca-pisca").removeClass("azul");
+            $(".btn").addClass("btn-danger");
+            $(".btn").removeClass("btn-primary");
+            $(".btn").removeClass("btn-dark");
+          }
+        }
+        function contar(){
+                let contador = $("#contador").text();
+                contador = parseInt(contador);
+                contador++;
+                $("#contador").text(contador);
+
+            }
+    </script>
+</body>
+</html>
